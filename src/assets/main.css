@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ==========================================
+   VARIABLES INSTITUCIONALES UEES
+   ========================================== */
+:root {
+  --uees-blue: #1E3A8A;
+  --uees-blue-dark: #172554;
+  --uees-blue-light: #EFF6FF;
+  --uees-gold: #FFD100;
+  --uees-gold-dark: #E5BB00;
+  
+  /* Variables para fondos y textos */
+  --bg-body: #F8FAFC;
+  --text-main: #1F2937;
+  --bg-input: #FFFFFF;
+  --border-input: #CBD5E1;
+}
+
+/* ==========================================
+   VARIABLES MODO OSCURO
+   ========================================== */
+.dark {
+  --bg-body: #0F172A; /* Slate-900 oscuro */
+  --text-main: #F8FAFC; /* Texto claro */
+  --bg-input: #1E293B; /* Slate-800 para inputs */
+  --border-input: #334155; /* Slate-700 */
+}
+
+/* ==========================================
+   ESTILOS GLOBALES
+   ========================================== */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: var(--bg-body);
+  color: var(--text-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Botones primarios */
+.btn-primary {
+  background-color: var(--uees-blue);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background-color: var(--uees-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
+
+.btn-primary:disabled {
+  background-color: #D1D5DB;
+  cursor: not-allowed;
+}
+
+/* Botón dorado */
+.btn-gold {
+  background-color: var(--uees-gold);
+  color: var(--uees-blue-dark);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn-gold:hover:not(:disabled) {
+  background-color: var(--uees-gold-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 209, 0, 0.4);
+}
+
+/* Inputs institucionales */
+.input-uees {
+  background-color: var(--bg-input);
+  color: var(--text-main);
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.input-uees:focus {
+  outline: none;
+  border-color: var(--uees-blue);
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+
+/* Scrollbar en modo oscuro */
+.dark ::-webkit-scrollbar-track {
+  background: #0F172A;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--uees-blue);
+  border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--uees-blue-dark);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
