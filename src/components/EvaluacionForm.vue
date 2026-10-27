@@ -31,27 +31,37 @@
         <p class="text-slate-500 dark:text-slate-400 mt-2 font-medium">Semana {{ semanaActiva.Numero_Semana }} - {{ semanaActiva.Descripcion }}</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-3xl">
+      <!-- Grid de 3 columnas (Actualizado) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
         <!-- Opción 1: Evaluación -->
-        <button @click="vistaActual = 'evaluacion'" class="group flex flex-col items-center p-8 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-md transition-all duration-200">
-          <div class="p-4 bg-blue-50 dark:bg-blue-900/30 rounded-full mb-4 group-hover:bg-blue-100 dark:group-hover:bg-blue-900/50 transition-colors">
+        <button @click="vistaActual = 'evaluacion'" class="group flex flex-col items-center p-6 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl hover:border-blue-400 hover:shadow-md transition-all duration-200">
+          <div class="p-4 bg-blue-50 dark:bg-blue-900/30 rounded-full mb-4 group-hover:bg-blue-100 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
-          <span class="text-xl font-bold text-slate-800 dark:text-white mb-2">Realizar Evaluación</span>
-          <span class="text-sm text-slate-500 dark:text-slate-400 text-center leading-relaxed">Registrar o editar los criterios de evaluación semanal de sus asignaturas asignadas.</span>
+          <span class="text-lg font-bold text-slate-800 dark:text-white mb-2 text-center">Realizar Evaluación</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-relaxed">Registrar criterios de evaluación semanal.</span>
         </button>
 
         <!-- Opción 2: Notificación -->
-        <button @click="abrirVistaNotificacion" class="group flex flex-col items-center p-8 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl hover:border-emerald-400 dark:hover:border-emerald-500 hover:shadow-md transition-all duration-200">
-          <div class="p-4 bg-emerald-50 dark:bg-emerald-900/30 rounded-full mb-4 group-hover:bg-emerald-100 dark:group-hover:bg-emerald-900/50 transition-colors">
+        <button @click="abrirVistaNotificacion" class="group flex flex-col items-center p-6 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl hover:border-emerald-400 hover:shadow-md transition-all duration-200">
+          <div class="p-4 bg-emerald-50 dark:bg-emerald-900/30 rounded-full mb-4 group-hover:bg-emerald-100 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
           </div>
-          <span class="text-xl font-bold text-slate-800 dark:text-white mb-2">Notificar Coordinador</span>
-          <span class="text-sm text-slate-500 dark:text-slate-400 text-center leading-relaxed">Revisar el estado de las evaluaciones y enviar el reporte consolidado en formato PDF.</span>
+          <span class="text-lg font-bold text-slate-800 dark:text-white mb-2 text-center">Notificar Coordinador</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-relaxed">Enviar reporte consolidado en PDF.</span>
+        </button>
+
+        <!-- 👇 Opción 3: Comunicados Estudiantiles (NUEVO) -->
+        <button @click="vistaActual = 'comunicados'" class="group flex flex-col items-center p-6 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl hover:border-amber-400 hover:shadow-md transition-all duration-200">
+          <div class="p-4 bg-amber-50 dark:bg-amber-900/30 rounded-full mb-4 group-hover:bg-amber-100 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+          </div>
+          <span class="text-lg font-bold text-slate-800 dark:text-white mb-2 text-center">Comunicados</span>
+          <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-relaxed">Enviar correos masivos a estudiantes.</span>
         </button>
       </div>
     </div>
@@ -64,22 +74,22 @@
       <!-- Botón Regresar -->
       <button 
         @click="volverAlMenu" 
-        class="group mb-6 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-200"
+        class="group mb-6 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-slate-50 hover:text-blue-600 hover:border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition-all duration-200"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         Volver al menú anterior
       </button>
 
-      <div class="border-b border-gray-200 dark:border-slate-700 pb-4 mb-6">
-        <h2 class="text-2xl font-bold text-slate-800 dark:text-white tracking-tight">Registro de Evaluación</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Complete los criterios para la asignatura seleccionada.</p>
+      <div class="border-b border-gray-200 pb-4 mb-6">
+        <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Registro de Evaluación</h2>
+        <p class="text-sm text-slate-500 mt-1">Complete los criterios para la asignatura seleccionada.</p>
       </div>
 
       <!-- Alerta sin asignaturas -->
-      <div v-if="todasLasAsignaturas.length === 0" class="bg-red-50 dark:bg-red-900/20 border-l-4 border-red-500 p-4 mb-6 rounded-r-md">
-        <p class="text-sm text-red-700 dark:text-red-400 font-medium">No tienes asignaturas asignadas en el catálogo para evaluar.</p>
+      <div v-if="todasLasAsignaturas.length === 0" class="bg-red-50 border-l-4 border-red-500 p-4 mb-6 rounded-r-md">
+        <p class="text-sm text-red-700 font-medium">No tienes asignaturas asignadas en el catálogo para evaluar.</p>
       </div>
 
       <template v-if="todasLasAsignaturas.length > 0">
@@ -87,15 +97,15 @@
         <!-- Selectores de Carrera y Asignatura -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
           <div>
-            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Carrera</label>
-            <select v-model="selectedCarrera" class="w-full p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer" :disabled="asignaturasCargando">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Carrera</label>
+            <select v-model="selectedCarrera" class="w-full p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer" :disabled="asignaturasCargando">
               <option value="">Seleccione una carrera</option>
               <option v-for="carrera in carreras" :key="carrera" :value="carrera">{{ carrera }}</option>
             </select>
           </div>
           <div>
-            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Asignatura</label>
-            <select v-model="selectedAsignatura" class="w-full p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer" :disabled="!selectedCarrera" @change="onCambioAsignatura">
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Asignatura</label>
+            <select v-model="selectedAsignatura" class="w-full p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer" :disabled="!selectedCarrera" @change="onCambioAsignatura">
               <option value="">Seleccione una asignatura</option>
               <option v-for="asig in asignaturasFiltradas" :key="asig.Id" :value="asig">
                 {{ asig.Asignatura }} (Sección {{ asig.Sección }})
@@ -105,51 +115,51 @@
         </div>
 
         <!-- Indicadores de estado de búsqueda -->
-        <div v-if="cargandoEvaluacion" class="flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg mb-6">
+        <div v-if="cargandoEvaluacion" class="flex items-center gap-2 text-sm font-medium text-blue-600 bg-blue-50 p-3 rounded-lg mb-6">
           <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-blue-600"></div>
           Buscando evaluación previa en el sistema...
         </div>
 
         <!-- Alertas de estado (Edición / Creación) -->
-        <div v-if="!cargandoEvaluacion && evaluacionExistente && selectedAsignatura" class="bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-200 dark:border-emerald-800 rounded-lg p-4 mb-6 flex items-start gap-3">
+        <div v-if="!cargandoEvaluacion && evaluacionExistente && selectedAsignatura" class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-6 flex items-start gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-emerald-500 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
           </svg>
-          <p class="text-sm text-emerald-800 dark:text-emerald-400 font-medium">Evaluación ya registrada para esta semana. Puede actualizar los datos si es necesario.</p>
+          <p class="text-sm text-emerald-800 font-medium">Evaluación ya registrada para esta semana. Puede actualizar los datos si es necesario.</p>
         </div>
-        <div v-if="!cargandoEvaluacion && !evaluacionExistente && selectedAsignatura" class="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 mb-6 flex items-start gap-3">
+        <div v-if="!cargandoEvaluacion && !evaluacionExistente && selectedAsignatura" class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 flex items-start gap-3">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-500 flex-shrink-0 mt-0.5" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
           </svg>
-          <p class="text-sm text-blue-800 dark:text-blue-400 font-medium">Se creará un nuevo registro de evaluación para esta asignatura en la semana actual.</p>
+          <p class="text-sm text-blue-800 font-medium">Se creará un nuevo registro de evaluación para esta asignatura en la semana actual.</p>
         </div>
 
         <!-- FORMULARIO DE EVALUACIÓN -->
         <template v-if="selectedAsignatura">
           
           <!-- Datos Informativos del Tutor -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8 bg-slate-50 dark:bg-slate-900/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700 transition-colors">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8 bg-slate-50 p-5 rounded-xl border border-slate-200">
             <div>
-              <label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Tutor Asignado</label>
-              <input type="text" :value="selectedAsignatura.Tutor" class="w-full p-2.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-sm rounded-lg cursor-not-allowed" readonly />
+              <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Tutor Asignado</label>
+              <input type="text" :value="selectedAsignatura.Tutor" class="w-full p-2.5 bg-slate-100 border border-slate-200 text-slate-700 text-sm rounded-lg cursor-not-allowed" readonly />
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-1.5">Correo del Tutor</label>
-              <input type="text" :value="selectedAsignatura.Correo_Tutor" class="w-full p-2.5 bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-300 text-sm rounded-lg cursor-not-allowed" readonly />
+              <label class="block text-xs font-semibold text-slate-500 uppercase tracking-wider mb-1.5">Correo del Tutor</label>
+              <input type="text" :value="selectedAsignatura.Correo_Tutor" class="w-full p-2.5 bg-slate-100 border border-slate-200 text-slate-700 text-sm rounded-lg cursor-not-allowed" readonly />
             </div>
           </div>
 
           <!-- Panel de Criterios de Evaluación -->
-          <div class="mb-8 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm overflow-hidden transition-colors">
-            <div class="bg-slate-50 dark:bg-slate-900/50 px-5 py-4 border-b border-gray-200 dark:border-slate-700">
-              <h3 class="text-base font-bold text-slate-800 dark:text-white">Criterios de Evaluación</h3>
+          <div class="mb-8 bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+            <div class="bg-slate-50 px-5 py-4 border-b border-gray-200">
+              <h3 class="text-base font-bold text-slate-800">Criterios de Evaluación</h3>
             </div>
             
             <div class="p-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               <!-- Ruta de Aprendizaje -->
               <div>
-                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Ruta de Aprendizaje</label>
-                <select v-model="form.Ruta_Aprendizaje" class="w-full p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer">
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Ruta de Aprendizaje</label>
+                <select v-model="form.Ruta_Aprendizaje" class="w-full p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer">
                   <option value="" disabled>Seleccione...</option>
                   <option value="SI">SI</option><option value="NO">NO</option><option value="N/A">N/A</option>
                 </select>
@@ -157,8 +167,8 @@
 
               <!-- Lectura H5P -->
               <div>
-                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Lectura H5P</label>
-                <select v-model="form.Lectura_H5P" class="w-full p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer">
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Lectura H5P</label>
+                <select v-model="form.Lectura_H5P" class="w-full p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer">
                   <option value="" disabled>Seleccione...</option>
                   <option value="SI">SI</option><option value="NO">NO</option><option value="N/A">N/A</option>
                 </select>
@@ -166,24 +176,24 @@
 
               <!-- Foros de Consulta -->
               <div>
-                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Foros de Consulta</label>
-                <select v-model="form.Foros_Consulta" class="w-full p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer">
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Foros de Consulta</label>
+                <select v-model="form.Foros_Consulta" class="w-full p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer">
                   <option value="" disabled>Seleccione...</option>
                   <option value="SI">SI</option><option value="NO">NO</option><option value="N/A">N/A</option>
                 </select>
               </div>
               <!-- Evaluación Semanal -->
               <div>
-                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Evaluación Semanal</label>
-                <select v-model="form.Evaluacion_Semanal" class="w-full p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer">
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Evaluación Semanal</label>
+                <select v-model="form.Evaluacion_Semanal" class="w-full p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer">
                   <option value="" disabled>Seleccione...</option>
                   <option value="SI">SI</option><option value="NO">NO</option><option value="N/A">N/A</option>
                 </select>
               </div>
               <!-- Motivación e Interacción -->
               <div>
-                <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Motivación e Interacción</label>
-                <select v-model="form.Motiva_Interaccion" class="w-full p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer">
+                <label class="block text-sm font-semibold text-slate-700 mb-1.5">Motivación e Interacción</label>
+                <select v-model="form.Motiva_Interaccion" class="w-full p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer">
                   <option value="" disabled>Seleccione...</option>
                   <option value="SI">SI</option><option value="NO">NO</option><option value="N/A">N/A</option>
                 </select>
@@ -194,29 +204,29 @@
           <!-- Editores de Texto Enriquecido -->
           <div class="space-y-6 mb-8">
             <!-- Observaciones -->
-            <div class="border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden shadow-sm bg-white dark:bg-slate-800">
-              <div class="bg-slate-50 dark:bg-slate-900/50 px-5 py-3 border-b border-gray-200 dark:border-slate-700">
-                <label class="text-sm font-bold text-slate-800 dark:text-white">Observaciones</label>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Notas que se incluirán en el reporte del coordinador.</p>
+            <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+              <div class="bg-slate-50 px-5 py-3 border-b border-gray-200">
+                <label class="text-sm font-bold text-slate-800">Observaciones</label>
+                <p class="text-xs text-slate-500 mt-0.5">Notas que se incluirán en el reporte del coordinador.</p>
               </div>
-              <QuillEditor v-model:content="form.Observaciones" contentType="html" theme="snow" :toolbar="toolbarOptions" class="bg-white dark:bg-slate-800" style="min-height: 120px;" />
+              <QuillEditor v-model:content="form.Observaciones" contentType="html" theme="snow" :toolbar="toolbarOptions" class="bg-white" style="min-height: 120px;" />
             </div>
 
             <!-- Mensaje al Tutor -->
-            <div class="border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden shadow-sm bg-white dark:bg-slate-800">
-              <div class="bg-slate-50 dark:bg-slate-900/50 px-5 py-3 border-b border-gray-200 dark:border-slate-700">
-                <label class="text-sm font-bold text-slate-800 dark:text-white">Mensaje al Tutor (Opcional)</label>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Este texto se enviará como introducción en la notificación al tutor.</p>
+            <div class="border border-gray-200 rounded-xl overflow-hidden shadow-sm">
+              <div class="bg-slate-50 px-5 py-3 border-b border-gray-200">
+                <label class="text-sm font-bold text-slate-800">Mensaje al Tutor (Opcional)</label>
+                <p class="text-xs text-slate-500 mt-0.5">Este texto se enviará como introducción en la notificación al tutor.</p>
               </div>
-              <QuillEditor v-model:content="form.Mensaje_Tutor" contentType="html" theme="snow" :toolbar="toolbarOptions" class="bg-white dark:bg-slate-800" style="min-height: 120px;" />
+              <QuillEditor v-model:content="form.Mensaje_Tutor" contentType="html" theme="snow" :toolbar="toolbarOptions" class="bg-white" style="min-height: 120px;" />
             </div>
           </div>
 
           <!-- Botón Guardar -->
-          <div class="pt-6 border-t border-gray-200 dark:border-slate-700 flex justify-end">
+          <div class="pt-6 border-t border-gray-200 flex justify-end">
             <button 
               @click="guardarEvaluacion" 
-              class="inline-flex items-center gap-2 bg-blue-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-800 transition-colors disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900" 
+              class="inline-flex items-center gap-2 bg-blue-700 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-blue-800 transition-colors disabled:bg-slate-300 disabled:cursor-not-allowed shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2" 
               :disabled="!formValido || cargandoEvaluacion || enviando"
             >
               <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -237,63 +247,63 @@
       <!-- Botón Regresar -->
       <button 
         @click="volverAlMenu" 
-        class="group mb-6 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-700 rounded-lg shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-all duration-200"
+        class="group mb-6 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-600 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-slate-50 hover:text-blue-600 hover:border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition-all duration-200"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 dark:text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-slate-400 group-hover:text-blue-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
         Volver al menú anterior
       </button>
 
-      <div class="border-b border-gray-200 dark:border-slate-700 pb-4 mb-6">
-        <h2 class="text-2xl font-bold text-slate-800 dark:text-white tracking-tight">Enviar Reporte Consolidado</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Verifique el estado de las evaluaciones y notifique al coordinador de la carrera.</p>
+      <div class="border-b border-gray-200 pb-4 mb-6">
+        <h2 class="text-2xl font-bold text-slate-800 tracking-tight">Enviar Reporte Consolidado</h2>
+        <p class="text-sm text-slate-500 mt-1">Verifique el estado de las evaluaciones y notifique al coordinador de la carrera.</p>
       </div>
 
       <!-- Filtro de Carrera y Datos del Coordinador -->
-      <div class="mb-8 bg-slate-50 dark:bg-slate-900/50 p-5 rounded-xl border border-slate-200 dark:border-slate-700">
-        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Seleccione la carrera a reportar:</label>
-        <select v-model="selectedCarreraNotificacion" @change="filtrarAsignaturasNotificacion" class="w-full md:w-1/2 p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors cursor-pointer">
+      <div class="mb-8 bg-slate-50 p-5 rounded-xl border border-slate-200">
+        <label class="block text-sm font-semibold text-slate-700 mb-2">Seleccione la carrera a reportar:</label>
+        <select v-model="selectedCarreraNotificacion" @change="filtrarAsignaturasNotificacion" class="w-full md:w-1/2 p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors cursor-pointer">
           <option value="">Seleccione una carrera</option>
           <option v-for="carrera in carreras" :key="carrera" :value="carrera">{{ carrera }}</option>
         </select>
 
         <!-- Aviso del coordinador asignado -->
-        <div v-if="coordinadorActual" class="mt-4 flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 px-4 py-3 rounded-lg w-full md:w-1/2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 dark:text-blue-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <div v-if="coordinadorActual" class="mt-4 flex items-center gap-3 bg-blue-50 border border-blue-200 px-4 py-3 rounded-lg w-full md:w-1/2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-600 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
           </svg>
           <div>
-            <p class="text-sm text-blue-900 dark:text-blue-300 font-medium">
+            <p class="text-sm text-blue-900 font-medium">
               Coordinador asignado: <span class="font-bold">{{ coordinadorActual.nombre }}</span>
             </p>
-            <p v-if="coordinadorActual.correo" class="text-xs text-blue-700 dark:text-blue-400">{{ coordinadorActual.correo }}</p>
+            <p v-if="coordinadorActual.correo" class="text-xs text-blue-700">{{ coordinadorActual.correo }}</p>
           </div>
         </div>
       </div>
 
       <!-- Tabla de Estados -->
       <div v-if="selectedCarreraNotificacion" class="mb-8">
-        <h3 class="text-base font-bold text-slate-800 dark:text-white mb-3">Estado de Evaluaciones</h3>
-        <div class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl overflow-hidden shadow-sm">
+        <h3 class="text-base font-bold text-slate-800 mb-3">Estado de Evaluaciones</h3>
+        <div class="bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm">
           <table class="w-full text-sm text-left">
-            <thead class="bg-slate-50 dark:bg-slate-900/50 text-slate-600 dark:text-slate-400 font-semibold text-xs uppercase tracking-wider border-b border-gray-200 dark:border-slate-700">
+            <thead class="bg-slate-50 text-slate-600 font-semibold text-xs uppercase tracking-wider border-b border-gray-200">
               <tr>
                 <th class="px-5 py-3">Asignatura</th>
                 <th class="px-5 py-3 text-center">Sección</th>
                 <th class="px-5 py-3 text-center">Estado</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-gray-100 dark:divide-slate-700">
-              <tr v-for="asig in asignaturasNotificacion" :key="asig.Id" class="hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-colors">
-                <td class="px-5 py-3.5 font-medium text-slate-800 dark:text-slate-200">{{ asig.Asignatura }}</td>
-                <td class="px-5 py-3.5 text-slate-500 dark:text-slate-400 text-center">{{ asig.Sección }}</td>
+            <tbody class="divide-y divide-gray-100">
+              <tr v-for="asig in asignaturasNotificacion" :key="asig.Id" class="hover:bg-slate-50 transition-colors">
+                <td class="px-5 py-3.5 font-medium text-slate-800">{{ asig.Asignatura }}</td>
+                <td class="px-5 py-3.5 text-slate-500 text-center">{{ asig.Sección }}</td>
                 <td class="px-5 py-3.5 text-center">
-                  <span v-if="estaEvaluada(asig.Id)" class="inline-flex items-center gap-1.5 bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400 px-2.5 py-1 rounded-md text-xs font-bold border border-emerald-200 dark:border-emerald-800">
+                  <span v-if="estaEvaluada(asig.Id)" class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-md text-xs font-bold border border-emerald-200">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
                     OK
                   </span>
-                  <span v-else class="inline-flex items-center gap-1.5 bg-red-50 dark:bg-red-900/30 text-red-700 dark:text-red-400 px-2.5 py-1 rounded-md text-xs font-bold border border-red-200 dark:border-red-800">
+                  <span v-else class="inline-flex items-center gap-1.5 bg-red-50 text-red-700 px-2.5 py-1 rounded-md text-xs font-bold border border-red-200">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     FALTA
                   </span>
@@ -305,31 +315,30 @@
       </div>
 
       <!-- Formulario de Redacción -->
-      <div v-if="selectedCarreraNotificacion" class="bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl shadow-sm overflow-hidden mb-6">
-        <div class="bg-slate-50 dark:bg-slate-900/50 px-5 py-4 border-b border-gray-200 dark:border-slate-700">
-          <h3 class="text-base font-bold text-slate-800 dark:text-white">Redactar Mensaje al Coordinador</h3>
+      <div v-if="selectedCarreraNotificacion" class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden mb-6">
+        <div class="bg-slate-50 px-5 py-4 border-b border-gray-200">
+          <h3 class="text-base font-bold text-slate-800">Redactar Mensaje al Coordinador</h3>
         </div>
         
         <div class="p-5 space-y-5">
           <div>
-            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Asunto del Correo</label>
-            <input v-model="mensajeCoordinador.asunto" type="text" placeholder="Ej. Reporte de Monitoreo - Semana 4" class="w-full p-2.5 bg-white dark:bg-slate-700 border border-gray-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 transition-colors" />
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Asunto del Correo</label>
+            <input v-model="mensajeCoordinador.asunto" type="text" placeholder="Ej. Reporte de Monitoreo - Semana 4" class="w-full p-2.5 bg-white border border-gray-300 text-slate-700 text-sm rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors" />
           </div>
           
           <div>
-            <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5">Cuerpo del Mensaje</label>
-            <div class="border border-gray-300 dark:border-slate-600 rounded-lg overflow-hidden">
-              <QuillEditor v-model:content="mensajeCoordinador.cuerpo" contentType="html" theme="snow" :toolbar="toolbarOptions" class="bg-white dark:bg-slate-800" style="min-height: 150px;" />
+            <label class="block text-sm font-semibold text-slate-700 mb-1.5">Cuerpo del Mensaje</label>
+            <div class="border border-gray-300 rounded-lg overflow-hidden">
+              <QuillEditor v-model:content="mensajeCoordinador.cuerpo" contentType="html" theme="snow" :toolbar="toolbarOptions" class="bg-white" style="min-height: 150px;" />
             </div>
           </div>
         </div>
 
-        <div class="bg-slate-50 dark:bg-slate-900/50 px-5 py-4 border-t border-gray-200 dark:border-slate-700 flex justify-end gap-3">
+        <div class="bg-slate-50 px-5 py-4 border-t border-gray-200 flex justify-end gap-3">
           
-          <!-- BOTÓN DE EXPORTAR EXCEL -->
           <button 
             @click="exportarAExcel" 
-            class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-gray-300 dark:border-slate-600 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+            class="inline-flex items-center gap-2 bg-white text-slate-700 border border-gray-300 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-slate-50 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-500 focus:ring-offset-2"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -337,10 +346,9 @@
             Descargar Excel
           </button>
 
-          <!-- Botón Enviar -->
           <button 
             @click="enviarConsolidado" 
-            class="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-emerald-700 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 disabled:bg-slate-300 dark:disabled:bg-slate-600 disabled:cursor-not-allowed"
+            class="inline-flex items-center gap-2 bg-emerald-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-emerald-700 transition-colors shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 disabled:bg-slate-300 disabled:cursor-not-allowed"
             :disabled="!mensajeValido || enviando"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -353,17 +361,24 @@
     </div>
 
     <!-- ========================================== -->
+    <!-- VISTA 4: COMUNICADOS (COMPONENTE)          -->
+    <!-- ========================================== -->
+    <div v-else-if="vistaActual === 'comunicados'">
+      <ComunicadosEstudiantiles @volver="vistaActual = 'menu'" />
+    </div>
+
+    <!-- ========================================== -->
     <!-- OVERLAY DE CARGA (PANTALLA COMPLETA)       -->
     <!-- ========================================== -->
     <Transition name="fade">
       <div v-if="enviando" class="fixed inset-0 flex items-center justify-center z-50 bg-slate-900/40 backdrop-blur-sm">
-        <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-8 flex flex-col items-center gap-5 max-w-sm mx-4">
+        <div class="bg-white rounded-2xl shadow-xl p-8 flex flex-col items-center gap-5 max-w-sm mx-4">
           <div class="spinner">
             <div v-for="i in 12" :key="i" class="spinner-bar" :style="{ transform: `rotate(${i * 30}deg) translateY(-24px)`, animationDelay: `${(i * 0.1).toFixed(1)}s` }"></div>
           </div>
           <div class="text-center">
-            <p class="text-lg font-bold text-slate-800 dark:text-white">Procesando solicitud</p>
-            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Enviando información al servidor...</p>
+            <p class="text-lg font-bold text-slate-800">Procesando solicitud</p>
+            <p class="text-sm text-slate-500 mt-1">Enviando información al servidor...</p>
           </div>
         </div>
       </div>
@@ -379,12 +394,16 @@ import { fetchData, postToN8n, N8N_WEBHOOKS, NOCODB_ENDPOINTS } from '@/api';
 import { useToast } from '@/composables/useToast';
 import ExcelJS from 'exceljs';
 
+// 👇 IMPORTAMOS EL NUEVO COMPONENTE
+import ComunicadosEstudiantiles from './ComunicadosEstudiantiles.vue';
+
 // ==========================================
 // CONFIGURACIÓN DE EDITOR DE TEXTO
 // ==========================================
 const toolbarOptions = [
   [{ 'header': [1, 2, 3, false] }],
   ['bold', 'italic', 'underline', 'strike'],
+  ['link', 'image'],
   [{ 'list': 'ordered' }, { 'list': 'bullet' }],
   [{ 'color': [] }, { 'background': [] }],
   ['clean']
@@ -396,7 +415,8 @@ const toast = useToast();
 // ==========================================
 // ESTADO GLOBAL DE LA VISTA
 // ==========================================
-const vistaActual = ref<'menu' | 'evaluacion' | 'notificacion'>('menu');
+// 👇 AGREGAMOS 'comunicados'
+const vistaActual = ref<'menu' | 'evaluacion' | 'notificacion' | 'comunicados'>('menu');
 
 // ==========================================
 // ESTADO DE DATOS
@@ -457,9 +477,7 @@ const mensajeValido = computed(() => {
 
 const coordinadorActual = computed(() => {
   if (!asignaturasNotificacion.value.length) return null;
-  
   const asigConCoordinador = asignaturasNotificacion.value.find(a => a.Correo_Coordinador || a.Nombre_Coordinador);
-  
   if (asigConCoordinador) {
     return {
       nombre: asigConCoordinador.Nombre_Coordinador || asigConCoordinador.Coordinador || 'Coordinador de Carrera',
@@ -596,7 +614,6 @@ const guardarEvaluacion = async () => {
     Seccion: selectedAsignatura.value.Sección,
     Tutor: selectedAsignatura.value.Tutor,
     Correo_Tutor: selectedAsignatura.value.Correo_Tutor,
-    // 👈 FIX TS: Aseguramos que no sea null y tenga un fallback
     Monitor_Nombre: authStore.monitor?.Nombre || '',
     Correo_Monitor: authStore.monitor?.Correo || '',
     Semana: semanaActiva.value.Numero_Semana,
@@ -649,16 +666,12 @@ const enviarConsolidado = async () => {
 
   if (asignaturasFaltantes.length > 0) {
     const mensaje = `⚠️ Ojo: Tienes ${asignaturasFaltantes.length} asignatura(s) sin evaluar en esta carrera.\n\n¿Estás seguro de que deseas enviar el reporte de todos modos?`;
-    
-    if (!confirm(mensaje)) {
-      return; 
-    }
+    if (!confirm(mensaje)) return;
   }
   
   enviando.value = true;
   try {
     await postToN8n(N8N_WEBHOOKS.enviarConsolidado, {
-      // 👈 FIX TS: Aseguramos que no sea null y tenga un fallback
       Monitor_Nombre: authStore.monitor?.Nombre || '',
       Correo_Monitor: authStore.monitor?.Correo || '',
       Facultad: authStore.monitor?.Facultad || '',
@@ -705,7 +718,6 @@ const exportarAExcel = async () => {
   mergeAndStyle(3, "DIRECCIÓN DE TECNOLOGÍA EDUCATIVA");
   mergeAndStyle(4, `INFORME DE MONITOREO VIRTUAL PARA EL ${selectedCarreraNotificacion.value.toUpperCase()}`);
   
-  // 👈 FIX TS: Forzamos a 'any' para que acepte la propiedad 'Ciclo' que no está en la interfaz
   mergeAndStyle(5, `CICLO ${(authStore.monitor as any)?.Ciclo || '02-2026'}`);
   
   mergeAndStyle(6, semanaActiva.value.Descripcion);
