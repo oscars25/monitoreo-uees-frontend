@@ -4,7 +4,7 @@ import { API_BASE_URL, N8N_WEBHOOKS, NOCODB_ENDPOINTS } from './config';
 // Cliente para n8n
 export const apiClient = axios.create({
   baseURL: API_BASE_URL
-  // 👈 Quitamos el 'Content-Type': 'application/json' para que Axios detecte 
+  // Quitamos el 'Content-Type': 'application/json' para que Axios detecte 
   // automáticamente si es JSON o si es FormData (archivos)
 });
 

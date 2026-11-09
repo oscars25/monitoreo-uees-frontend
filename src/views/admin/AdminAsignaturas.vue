@@ -333,7 +333,7 @@ const ciclosUnicos = computed(() => {
   return [...new Set(asignaturas.value.map(a => a.Ciclo))].filter(Boolean).sort();
 });
 
-// ⭐ NUEVO: Obtiene las carreras que pertenecen a la facultad seleccionada
+// NUEVO: Obtiene las carreras que pertenecen a la facultad seleccionada
 const carrerasPorFacultad = computed(() => {
   if (!formulario.value.Facultad) return [];
   return [...new Set(
@@ -393,7 +393,7 @@ const asignarMonitor = () => {
   }
 };
 
-// ⭐ NUEVO: Si el usuario cambia la facultad, reseteamos la carrera si ya no pertenece a esa facultad
+// NUEVO: Si el usuario cambia la facultad, reseteamos la carrera si ya no pertenece a esa facultad
 const onFacultadChange = () => {
   if (!carrerasPorFacultad.value.includes(formulario.value.Carrera)) {
     formulario.value.Carrera = '';

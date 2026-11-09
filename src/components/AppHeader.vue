@@ -1,5 +1,5 @@
 <template>
-  <!-- 👇 Agregamos dark:bg-slate-900 y transición -->
+  <!-- Agregamos dark:bg-slate-900 y transición -->
   <header class="bg-white dark:bg-slate-900 border-b-4 shadow-sm transition-colors duration-300" style="border-color: #FFD100;">
     <div class="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
       
@@ -7,7 +7,7 @@
       <div class="flex items-center gap-4">
         <img src="/logo-uees.png" alt="UEES" class="h-12 w-auto" />
         <div class="border-l-2 border-gray-200 dark:border-slate-700 pl-4 hidden md:block transition-colors duration-300">
-          <!-- 👇 Cambiamos el style por clases de Tailwind para que el modo oscuro funcione -->
+          <!-- Cambiamos el style por clases de Tailwind para que el modo oscuro funcione -->
           <h1 class="text-lg font-bold leading-tight text-blue-900 dark:text-white">
             Sistema de Monitoreo
           </h1>
@@ -17,7 +17,7 @@
       <!-- Acciones -->
       <div class="flex items-center gap-4">
         
-        <!-- 👇 BOTÓN DE MODO OSCURO -->
+        <!-- BOTÓN DE MODO OSCURO -->
         <button 
           @click="toggleDark" 
           class="p-2 text-slate-500 hover:text-blue-600 dark:text-slate-400 dark:hover:text-yellow-400 transition-colors rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 mr-2"

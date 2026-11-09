@@ -128,7 +128,7 @@ const handleLogin = async () => {
         Nombre: response.monitor.Nombre,
         Correo: response.monitor.Correo,
         Facultad: response.monitor.Facultad,
-        Rol: rolUsuario // 👈 Ahora sí, guardamos el rol dinámico
+        Rol: rolUsuario // Ahora sí, guardamos el rol dinámico
       });
 
       // Redirección basada en el rol
@@ -139,11 +139,11 @@ const handleLogin = async () => {
       }
       
     } else {
-      alert('❌ ' + (response.message || 'Credenciales incorrectas'));
+      alert(response.message || 'Credenciales incorrectas');
     }
   } catch (error) {
     console.error(error);
-    alert('❌ Error al conectar con el servidor.');
+    alert('Error al conectar con el servidor.');
   } finally {
     cargando.value = false;
   }

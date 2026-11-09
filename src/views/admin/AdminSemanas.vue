@@ -219,7 +219,7 @@ const formulario = ref({
 // ==========================================
 const formatearFecha = (fecha: string): string => {
   if (!fecha) return '';
-  // 👈 FIX TS: Agregamos || '' para asegurar que TypeScript sepa que siempre devuelve un string
+  // FIX TS: Agregamos || '' para asegurar que TypeScript sepa que siempre devuelve un string
   return fecha.split('T')[0] || ''; 
 };
 
@@ -249,7 +249,7 @@ const abrirFormulario = (sem?: any) => {
     formulario.value = {
       Numero_Semana: sem.Numero_Semana,
       Anio: sem.Anio,
-      // 👈 FIX TS: Aseguramos que sea un string pase lo que pase
+      // FIX TS: Aseguramos que sea un string pase lo que pase
       Fecha_Inicio: formatearFecha(sem.Fecha_Inicio) || '',
       Fecha_Fin: formatearFecha(sem.Fecha_Fin) || '',
       Descripcion: sem.Descripcion || '',

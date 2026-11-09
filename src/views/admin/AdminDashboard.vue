@@ -70,7 +70,7 @@
           </div>
         </RouterLink>
 
-        <!-- ⭐ NUEVA Tarjeta Evaluaciones -->
+        <!-- NUEVA Tarjeta Evaluaciones -->
         <RouterLink 
           to="/admin/evaluaciones" 
           class="group flex flex-col bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-gray-200 dark:border-slate-700 hover:border-emerald-400 hover:shadow-md transition-all duration-200"

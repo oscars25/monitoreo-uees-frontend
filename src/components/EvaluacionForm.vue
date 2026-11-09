@@ -55,7 +55,7 @@
           <span class="text-xs text-slate-500 dark:text-slate-400 text-center leading-relaxed">Enviar reporte consolidado en PDF.</span>
         </button>
 
-        <!-- 👇 Opción 3: Comunicados Estudiantiles (NUEVO) -->
+        <!-- Opción 3: Comunicados Estudiantiles (NUEVO) -->
         <button @click="vistaActual = 'comunicados'" class="group flex flex-col items-center p-6 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-2xl hover:border-amber-400 hover:shadow-md transition-all duration-200">
           <div class="p-4 bg-amber-50 dark:bg-amber-900/30 rounded-full mb-4 group-hover:bg-amber-100 transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
@@ -394,7 +394,7 @@ import { fetchData, postToN8n, N8N_WEBHOOKS, NOCODB_ENDPOINTS } from '@/api';
 import { useToast } from '@/composables/useToast';
 import ExcelJS from 'exceljs';
 
-// 👇 IMPORTAMOS EL NUEVO COMPONENTE
+// IMPORTAMOS EL NUEVO COMPONENTE
 import ComunicadosEstudiantiles from './ComunicadosEstudiantiles.vue';
 
 // ==========================================
@@ -415,7 +415,7 @@ const toast = useToast();
 // ==========================================
 // ESTADO GLOBAL DE LA VISTA
 // ==========================================
-// 👇 AGREGAMOS 'comunicados'
+// AGREGAMOS 'comunicados'
 const vistaActual = ref<'menu' | 'evaluacion' | 'notificacion' | 'comunicados'>('menu');
 
 // ==========================================
@@ -665,7 +665,7 @@ const enviarConsolidado = async () => {
   );
 
   if (asignaturasFaltantes.length > 0) {
-    const mensaje = `⚠️ Ojo: Tienes ${asignaturasFaltantes.length} asignatura(s) sin evaluar en esta carrera.\n\n¿Estás seguro de que deseas enviar el reporte de todos modos?`;
+    const mensaje = `Ojo: Tienes ${asignaturasFaltantes.length} asignatura(s) sin evaluar en esta carrera.\n\n¿Estás seguro de que deseas enviar el reporte de todos modos?`;
     if (!confirm(mensaje)) return;
   }
   

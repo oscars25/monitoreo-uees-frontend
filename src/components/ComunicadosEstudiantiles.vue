@@ -52,7 +52,7 @@
           </div>
         </div>
 
-        <!-- 👇 NUEVA ZONA DE ARCHIVOS MEJORADA 👇 -->
+        <!-- NUEVA ZONA DE ARCHIVOS MEJORADA -->
         <div>
           <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">Documentos adjuntos (Opcional)</label>
           
@@ -104,7 +104,7 @@
             </li>
           </ul>
         </div>
-        <!-- 👆 FIN DE LA ZONA DE ARCHIVOS MEJORADA 👆 -->
+        <!-- FIN DE LA ZONA DE ARCHIVOS MEJORADA -->
 
       </div>
 
